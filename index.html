@@ -49,6 +49,8 @@
 <script type='text/javascript'>
 var duration = 1000 * 60 * 60; // 60 minutes
 //var duration = 1000 * 10; // 10 seconds
+var noti_title = "GET UP";
+var noti_body = "Get off your butt and walk around for a couple minutes";
 
 var counter = document.querySelector('.counter');
 var background = document.querySelector('.background');
@@ -102,7 +104,7 @@ function updateback(timeleft) {
 function notify() {
     return;
     Notification.requestPermission();
-    var n = new Notification("GET UP", {body:"Time to get your ass up and walk around"});
+    var n = new Notification(noti_title, {body:noti_body});
 }
 
 window.requestAnimationFrame(step);
