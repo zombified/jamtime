@@ -47,8 +47,9 @@
         </div>
         <div class='background'></div>
 <script type='text/javascript'>
-var duration = 1000 * 60 * 60; // 60 minutes
-//var duration = 1000 * 10; // 10 seconds
+//var duration = 1000 * 60 * 60; // 60 minutes
+var duration = 1000 * 60 * 20; // 20 minutes
+//var duration = 1000 * 30; // 30 seconds
 var noti_title = "GET UP";
 var noti_body = "Get off your butt and walk around for a couple minutes";
 
@@ -96,7 +97,7 @@ function step() {
 
     counter.innerHTML = output;
 
-    window.setTimeout(step, 500);
+    window.setTimeout(step, 50);
 }
 
 function updateback(timeleft) {
@@ -105,7 +106,6 @@ function updateback(timeleft) {
 }
 
 function notify() {
-    return;
     Notification.requestPermission();
     var n = new Notification(noti_title, {body:noti_body});
 }
