@@ -56,8 +56,9 @@ var counter = document.querySelector('.counter');
 var background = document.querySelector('.background');
 var start = null;
 
-function step(timestamp) {
-    window.requestAnimationFrame(step);
+function step() {
+    timestamp = performance.now();
+    //window.requestAnimationFrame(step);
 
     if(!start) { start = timestamp; }
 
@@ -94,6 +95,8 @@ function step(timestamp) {
     }
 
     counter.innerHTML = output;
+
+    window.setTimeout(step, 500);
 }
 
 function updateback(timeleft) {
@@ -107,7 +110,8 @@ function notify() {
     var n = new Notification(noti_title, {body:noti_body});
 }
 
-window.requestAnimationFrame(step);
+step();
+//window.requestAnimationFrame(step);
 </script>
     </body>
 </html>
